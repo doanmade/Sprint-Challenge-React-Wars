@@ -1,12 +1,13 @@
 .app {
   margin: auto;
   display: flex;
-  justify-content: space-evenly;
+  /* justify-content: space-evenly; */
 }
 
 .header {
   color: red;
   font-size: 48px;
+  width: 100%;
 }
 
 h1 {
@@ -28,9 +29,27 @@ h2 {
 
 .characters {
   border: 2px solid green;
-  color: black;
+  color: rgba(0, 0, 0);
   border-radius: 15px;
   width: 300px;
   margin: 20px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.people {
+  width: 100%;
+}
+
+.world {
+  width: 50%;
+}
+
+.sectionHead {
+  padding: 20px;
+  margin: auto;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
   text-align: center;
 }
