@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
+import "../App.css";
 import Characters from "./Characters";
 
-import "../App.css";
 class Starwars extends React.Component {
   constructor(props) {
     super(props);

@@ -1,12 +1,12 @@
-
 body {
   padding: 0;
-  background-image: url("sw-bg.jpg")
-  font-family: 'Open Sans', sans-serif;
+  background-image: url("./sw-bg.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: "Open Sans", sans-serif;
   color: white;
-  width: 90%; 
+  width: 90%;
   margin: 10px auto;
   padding-top: 50px;
   /* background-color: black; */
 }
-
