@@ -1,6 +1,8 @@
 body {
   padding: 0;
   background-image: url("./sw-bg.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   font-family: "Open Sans", sans-serif;
   color: white;
   width: 90%;
