@@ -1,71 +1,21 @@
-import React, { Component } from "react";
+import React from "react";
 import "./App.css";
-import Planet from "./components/Planet.js";
-import Starwars from "./components/Starwars.js";
+import StarWars from "./components/StarWars";
 
-class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      starwarsChars: [],
-      homeWorld: []
-    };
-  }
+const App = () => {
+  // Try to think through what state you'll need for this app before starting. Then build out
+  // the state properties here.
 
-  componentDidMount() {
-    this.getCharacters("https://swapi.co/api/people/");
-    this.getWorlds("https://swapi.co/api/planets/");
-  }
+  // Fetch characters from the star wars api in an effect hook. Remember, anytime you have a
+  // side effect in a component, you want to think about which state and/or props it should
+  // sync up with, if any.
 
-  getWorlds = URL => {
-    // feel free to research what this code is doing.
-    // At a high level we are calling an API to fetch some starwars data from the open web.
-    // We then take that data and resolve it our state.
-    fetch(URL)
-      .then(res => {
-        return res.json();
-      })
-      .then(data => {
-        this.setState({ homeWorld: data.results });
-      })
-      .catch(err => {
-        throw new Error(err);
-      });
-  };
-
-  getCharacters = URL => {
-    // feel free to research what this code is doing.
-    // At a high level we are calling an API to fetch some starwars data from the open web.
-    // We then take that data and resolve it our state.
-    fetch(URL)
-      .then(res => {
-        return res.json();
-      })
-      .then(data => {
-        this.setState({ starwarsChars: data.results });
-      })
-      .catch(err => {
-        throw new Error(err);
-      });
-  };
-
-  render() {
-    return (
-      <div>
-        <h1 className="Header">The Real React Wars </h1>
-
-        <div className="App">
-          <h1 className="sectionHead">People</h1>
-          <div className="people">
-            <Starwars person={this.state.starwarsChars} />
-
-            <h1 className="sectionHead">Planets</h1>
-            <Planet world={this.state.homeWorld} />
-          </div>
-        </div>
-      </div>
-    );
-  }
-}
+  return (
+    <div className="App">
+      <h1 className="Header">React Wars</h1>
+      <StarWars />
+    </div>
+  );
+};
 
 export default App;

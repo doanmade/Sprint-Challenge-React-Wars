@@ -1,34 +1,50 @@
-import React from "react";
-import "../App.css";
-import Characters from "./Characters";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import styled from "styled-components";
+import StarWarsCard from "./StarWarsCard";
+const MainCard = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 10px auto;
+`;
 
-class Starwars extends React.Component {
-  constructor(props) {
-    super(props);
+function StarWars() {
+  const [data, setData] = useState([]);
 
-    console.log(this.props.person);
-  }
+  useEffect(() => {
+    axios
+      .get(`https://swapi.co/api/people/`)
+      .then(res => {
+        console.log("it's working:", res.data);
+        setData(res.data.results);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }, []);
 
-  render() {
-    return (
-      <div className="allcharacters">
-        {this.props.person.map(person => {
+  return (
+    <div className="App">
+      <MainCard>
+        {data.map(data => {
           return (
-            <Characters
-              name={person.name}
-              birth={person.birth_year}
-              gender={person.gender}
-              eye={person.eye_color}
-              hair={person.hair_color}
-              height={person.height}
-              mass={person.mass}
-              skin={person.skin_color}
+            <StarWarsCard
+              key={data.created}
+              name={data.name}
+              birth={data.birth_year}
+              gender={data.gender}
+              eye={data.eye_color}
+              hair={data.hair_color}
+              height={data.height}
+              mass={data.mass}
+              skin={data.skin_color}
             />
           );
         })}
-      </div>
-    );
-  }
+      </MainCard>
+    </div>
+  );
 }
 
-export default Starwars;
+export default StarWars;

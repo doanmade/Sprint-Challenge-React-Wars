@@ -1,55 +1,8 @@
-.app {
-  margin: auto;
-  display: flex;
-  /* justify-content: space-evenly; */
-}
-
-.header {
-  color: red;
-  font-size: 48px;
-  width: 100%;
-}
-
-h1 {
-  font-family: sans-serif;
-  color: blue;
-}
-h2 {
-  color: white;
-  background-color: black;
-  padding: 20px;
-}
-
-.allcharacters {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  margin: 10px auto;
-}
-
-.characters {
-  border: 2px solid white;
-  color: rgba(0, 0, 0);
-  border-radius: 15px;
-  width: 300px;
-  margin: 20px auto;
-  text-align: center;
-  background-color: rgba(255, 255, 255, 0.5);
-}
-
-.people {
-  width: 100%;
-}
-
-.world {
-  width: 50%;
-}
-
-.sectionHead {
-  padding: 20px;
-  margin: auto;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
+.App {
   text-align: center;
 }
+.Header {
+  color: #443e3e;
+  text-shadow: 1px 1px 5px #fff;
+}
+/* write your parent styles in here for your App.js */
